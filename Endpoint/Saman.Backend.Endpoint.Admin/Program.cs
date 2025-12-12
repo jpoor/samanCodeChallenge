@@ -25,8 +25,6 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddIdentity<User_dBo, IdentityRole>(options =>
 {
     // Set password options
@@ -43,6 +41,8 @@ builder.Services.AddIdentity<User_dBo, IdentityRole>(options =>
 builder.Services.AddCustomAuthentication(builder.Configuration);
 
 builder.Services.AddScopeServices();
+
+builder.Services.AddCustomSwagger();
 
 var app = builder.Build();
 

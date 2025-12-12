@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Entity\Authentication\Rsx\Authentication_Rsx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Authentication_Rsx.resx</DependentUpon>
+    </Compile>
     <Compile Update="Entity\Category\Rsx\Category_Rsx.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -39,6 +44,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Entity\Authentication\Rsx\Authentication_Rsx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Authentication_Rsx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Entity\Category\Rsx\Category_Rsx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category_Rsx.Designer.cs</LastGenOutput>

@@ -29,13 +29,11 @@ namespace Saman.Backend.Business.Entity.Category
         [MaxLength(200)]
         public string Name { get; set; } = null!;
 
-        [Mandatory]
         [MaxLength(1000)]
-        public string PathByName { get; set; } = null!;
+        public string? PathByName { get; set; } 
 
-        [Mandatory]
         [MaxLength(1000)]
-        public string PathById { get; set; } = null!;
+        public string? PathById { get; set; }
 
         [Range(1, 4)]
         public int Level { get; set; }

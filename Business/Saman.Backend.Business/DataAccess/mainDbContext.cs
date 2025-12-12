@@ -33,6 +33,8 @@ namespace Saman.Backend.Business.DataAccess
 
             // Custome configs
             modelBuilder.ApplyConfiguration(new Entity.Authentication.UserConfiguration());
+            modelBuilder.ApplyConfiguration(new Entity.Authentication.RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new Entity.Authentication.UserRoleConfiguration());
             modelBuilder.ApplyConfiguration(new Entity.Category.CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new Entity.Product.ProductConfiguration());
             modelBuilder.ApplyConfiguration(new Entity.Log.LogConfiguration());

@@ -9,7 +9,7 @@ using System.Text.Json;
 
 namespace Saman.Backend.Business.Entity.Log
 {
-    [Table("Log", Schema = "cor")]
+    [Table("Log", Schema = "log")]
     public class Log_dBo : baseDBo
     {
         public Log_dBo() { }

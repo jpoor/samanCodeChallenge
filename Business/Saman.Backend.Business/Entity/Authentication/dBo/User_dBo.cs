@@ -91,6 +91,41 @@ namespace Saman.Backend.Business.Entity.Authentication
             builder.HasIndex(u => u.PhoneNumber).HasFilter("PhoneNumber IS NOT NULL").IsUnique();
 
             builder.Property(p => p.CreationDate).HasDefaultValueSql("GETDATE()");
+
+            builder.HasData(
+                new User_dBo
+                {
+                    Id = "usridsuperadmin",
+                    IdentificationCode = "OWePCGHUqKgKrAjWSw",
+                    UserName = "superadmin",
+                    NormalizedUserName = "SUPERADMIN",
+                    FirstName = "Super Admin",
+                    PasswordHash = "AQAAAAIAAYagAAAAEI8nEg+XoAuBQ0kxNJy3h1sIVpzNQxn7i/TaC5NvpxoN89dJP79nZcQzHPfVZLF+pw==", // 123456
+                    SecurityStamp = "N4DNDTNCCHQALRBOVJOYXG3ACWHESEKK",
+                    ConcurrencyStamp = "3a23c325-271e-4387-ba65-63d8497e57b4",
+                    LockoutEnabled = true,
+                    CreatorId = "0"
+                });
+        }
+    }
+
+    public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
+    {
+        public void Configure(EntityTypeBuilder<IdentityRole> builder)
+        {
+            builder.HasData(
+                new IdentityRole { Id = "r01superadmin", Name = "SuperAdmin", NormalizedName = "SUPERADMIN" },
+                new IdentityRole { Id = "r02admin", Name = "Admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Id = "r03support", Name = "Support", NormalizedName = "SUPPORT" });
+        }
+    }
+
+    public class UserRoleConfiguration : IEntityTypeConfiguration<IdentityUserRole<string>>
+    {
+        public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
+        {
+            builder.HasData(
+                new IdentityUserRole<string> { RoleId = "r01superadmin", UserId = "usridsuperadmin" });
         }
     }
 }

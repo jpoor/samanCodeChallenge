@@ -22,9 +22,9 @@ namespace Saman.Backend.Business.Entity.Category
 
         public string Name { get; set; } = null!;
 
-        public string PathByName { get; set; } = null!;
+        public string? PathByName { get; set; } 
 
-        public string PathById { get; set; } = null!;
+        public string? PathById { get; set; } 
 
         public int Level { get; set; }
     }

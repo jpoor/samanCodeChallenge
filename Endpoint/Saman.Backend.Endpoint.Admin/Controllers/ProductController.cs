@@ -9,7 +9,6 @@ using Saman.Backend.Endpoint.Admin.baseClasses;
 using Saman.Backend.Share.shareClasses;
 using Saman.Backend.Share.shareExceptions;
 using Saman.Backend.Share.shareServices;
-using System.IO;
 
 namespace Saman.Backend.Endpoint.Admin.Controllers
 {

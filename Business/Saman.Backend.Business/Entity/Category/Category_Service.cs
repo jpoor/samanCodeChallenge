@@ -17,8 +17,8 @@ namespace Saman.Backend.Business.Entity.Category
             // searching
             if (!string.IsNullOrWhiteSpace(filtering?.SearchValue))
                 dbos = dbos.Where(x => x.Name.Contains(filtering.SearchValue)
-                                    || x.PathByName.Contains(filtering.SearchValue)
-                                    || x.PathById.Contains(filtering.SearchValue));
+                                    || (!string.IsNullOrWhiteSpace(x.PathByName) && x.PathByName.Contains(filtering.SearchValue))
+                                    || (!string.IsNullOrWhiteSpace(x.PathById) && x.PathById.Contains(filtering.SearchValue)));
 
             return dbos;
         }
